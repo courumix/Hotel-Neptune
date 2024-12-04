@@ -53,12 +53,13 @@ require_once __DIR__.'/../database.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel Neptune</title>
 </head>
 <body>
     <div class="container my-5">
         <form action="" methode="Post">
-
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mot de Passe" required>
         </form>
     </div>
 </body>

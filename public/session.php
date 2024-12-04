@@ -5,4 +5,3 @@ if(isset($_COOKIE ['PHPSESSID'])) {
 }
 
 $isLoggedIn = isset($_SESSION) && isset($_SESSION['user']);
-?>
