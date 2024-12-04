@@ -1,6 +1,18 @@
 <?php
     include __DIR__. '/session.php';
 ?>
+<nav>
+    <div>
+        <ul>
+            <li>Hotel Neptune</li>
+            <li>Accueil</li>
+            <li>Chambre</li>
+            <li>A propos</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+</nav>
+
 
 <nav>
     <?php if(!$isLoggedIn) {?>
