@@ -47,7 +47,8 @@ require_once __DIR__.'/../database.php';
     header('location: /');
     exit;
 
-?>        
+?>   
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
