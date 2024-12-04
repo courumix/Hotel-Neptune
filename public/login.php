@@ -6,17 +6,17 @@ require_once __DIR__.'/../database.php';
         !isset($_POST['email'])
         || !isset($_POST['password'])
         ){
-            $message='Il manque une information.';
+            $message = 'Il manque une information.';
             header('Location: /error.php?message= '. urlencode($message));
             exit;
         }
-
+    
 
     if(
         empty($_POST['email'])
         || empty($_POST['password'])
         ){
-            $message='Tous les chamsp doivent être renseignés.';
+            $message = 'Tous les chamsp doivent être renseignés.';
             header('Location: /error.php?message= '. urlencode($message));
             exit;
         }
@@ -26,7 +26,7 @@ require_once __DIR__.'/../database.php';
     $user = $query->fetch();
 
     if (!$user) {
-        $message='Aucun utilisateur pour L\email ' . $_POST ;['email'] . '.';
+        $message = 'Aucun utilisateur pour L\email ' . $_POST ;['email'] . '.';
         header('Location: /error.php?message= '. urlencode($message));
         exit;
     }
