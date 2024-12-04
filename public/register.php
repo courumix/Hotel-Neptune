@@ -57,6 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Document</title>
 </head>
 <body>
+    <?php include __DIR__. '/navbar.php' ?>
     <div class="container">
         <form action="" method="post">
             <input type="text" name="firstname" placeholder="Nom" required>
