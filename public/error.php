@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include __DIR__ .'/../nav-bar.php'; ?>
+    <?php include __DIR__ .'/../navbar.php'; ?>
 </body>
 </html>
