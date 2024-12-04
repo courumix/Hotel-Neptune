@@ -10,12 +10,12 @@
         <li class="nav-item">
             <a href="/public/register.php" class="nav-link">Inscript</a>
         </li>
-    <?php} else {?>
+    <?php }else {?>
         <li class="nav-item">
             <a href="" class="nav-link"></a>
         </li>
         <li class="nav-item">
             <a href="" class="nav-link"></a>
         </li>
-    <?php}?>
+    <?php }?>
 </nav>
