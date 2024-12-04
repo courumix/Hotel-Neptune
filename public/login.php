@@ -22,7 +22,7 @@ require_once __DIR__.'/../database.php';
         }
 
     $query = $pdo -> prepare('SELECT * FROM users WHERE users.email = :email');
-    $query = $query->execute(['email' => $_POST ['email']]);
+    $query->execute(['email' => $_POST ['email']]);
     $user = $query->fetch();
 
     if (!$user) {

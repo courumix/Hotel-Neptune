@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
         
     $query = $pdo -> prepare('SELECT * FROM users WHERE users.email = :email');
-    $query = $query->execute(['email' => $_POST ['email']]);
+    $query->execute(['email' => $_POST ['email']]);
 
     if($query->fetch()){
         $message='Il utilisateur exist déja cette addresse email.';
