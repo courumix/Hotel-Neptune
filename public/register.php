@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../database.php';
 
-if($_SERVER('REQUEST_METHOD') === 'POST'){
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(!isset($_POST['firstname'])
     || !isset($_POST['lastname'])
     || !isset($_POST['email'])
@@ -14,25 +14,38 @@ if($_SERVER('REQUEST_METHOD') === 'POST'){
     }
 }
 
-    if($_SERVER('REQUEST_METHOD') === 'POST'){
-        if(empty($_POST['firstname'])
-        || empty($_POST['lastname'])
-        || empty($_POST['email'])
-        || empty($_POST['password'])
-        ){
-            $message='Tous les chamsp doivent être renseignés.';
-            header('Location: /error.php?message= '. urlencode($message));
-            exit;
-        }
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(empty($_POST['firstname'])
+    || empty($_POST['lastname'])
+    || empty($_POST['email'])
+    || empty($_POST['password'])
+    ){
+        $message='Tous les chamsp doivent être renseignés.';
+        header('Location: /error.php?message= '. urlencode($message));
+        exit;
+    }
         
-        $query = $pdo -> prepare('SELECT * FROM users WHERE users.email = :email');
-        $query = $query->execute(['email' => $_POST ['email']]);
+    $query = $pdo -> prepare('SELECT * FROM users WHERE users.email = :email');
+    $query = $query->execute(['email' => $_POST ['email']]);
 
-        if($query->fetch{}){
-            $message='Il utilisateur exist déja utilisateur du même nom.';
-            header('Location: /error.php?message= '. urlencode($message));
-            exit;
-        }
+    if($query->fetch()){
+        $message='Il utilisateur exist déja cette addresse email.';
+        header('Location: /error.php?message= '. urlencode($message));
+        exit;
+    }
+
+    $plainPassword= $_POST ['password'];
+    $hashedPassword= password_hash($plainPassword, PASSWORD_DEFAULT);
+
+    $query = $pdo->prepare('INSERT INTO users(firstname, lastname, email, password)
+    VALUES(:firstname ,:lastname, :email, :password)
+    ');
+    $query->execute([
+        'firstname'=> $_POST['firstname'],
+        'lastname' => $_POST['lastname'],
+        'email' => $_POST['email'],
+        'password' => $_POST['password'],
+    ]);
 }
 ?>
 
