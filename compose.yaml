@@ -1,4 +1,4 @@
-name: hotel-neptune
+name: project-name
 
 services:
   ###> doctrine/doctrine-bundle ###
