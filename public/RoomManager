@@ -1,0 +1,68 @@
+<?php
+class RoomManager {
+    private $pdo;
+
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
+    }
+
+    // Get all available rooms
+    public function getAvailableRooms($filters = []) {
+        $query = "SELECT * FROM rooms WHERE status = 'disponible'";
+        
+        // Apply filters
+        if (!empty($filters['type'])) {
+            $query .= " AND type = :type";
+        }
+        if (!empty($filters['capacity'])) {
+            $query .= " AND capacity >= :capacity";
+        }
+        if (!empty($filters['max_price'])) {
+            $query .= " AND price_per_night <= :max_price";
+        }
+
+        $stmt = $this->pdo->prepare($query);
+
+        // Bind filter values
+        if (!empty($filters['type'])) {
+            $stmt->bindValue(':type', $filters['type']);
+        }
+        if (!empty($filters['capacity'])) {
+            $stmt->bindValue(':capacity', $filters['capacity'], PDO::PARAM_INT);
+        }
+        if (!empty($filters['max_price'])) {
+            $stmt->bindValue(':max_price', $filters['max_price'], PDO::PARAM_STR);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    // Create a new room (admin only)
+    public function createRoom($roomData) {
+        $stmt = $this->pdo->prepare(
+            "INSERT INTO rooms (room_number, type, capacity, price_per_night, description) 
+            VALUES (:room_number, :type, :capacity, :price_per_night, :description)"
+        );
+
+        return $stmt->execute([
+            ':room_number' => $roomData['room_number'],
+            ':type' => $roomData['type'],
+            ':capacity' => $roomData['capacity'],
+            ':price_per_night' => $roomData['price_per_night'],
+            ':description' => $roomData['description']
+        ]);
+    }
+
+    // Update room status
+    public function updateRoomStatus($roomId, $status) {
+        $stmt = $this->pdo->prepare(
+            "UPDATE rooms SET status = :status WHERE id = :room_id"
+        );
+
+        return $stmt->execute([
+            ':status' => $status,
+            ':room_id' => $roomId
+        ]);
+    }
+}

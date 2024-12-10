@@ -1,0 +1,83 @@
+<?php
+class UserAuth {
+    private $pdo;
+
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
+    }
+
+    // User registration
+    public function register($firstname, $lastname, $email, $password) {
+        // Validate input
+        if (empty($firstname) || empty($lastname) || empty($email) || empty($password)) {
+            throw new Exception("Tous les champs sont requis.");
+        }
+
+        // Check if email already exists
+        $stmt = $this->pdo->prepare("SELECT id FROM users WHERE email = :email");
+        $stmt->execute([':email' => $email]);
+        if ($stmt->fetch()) {
+            throw new Exception("Cet email est déjà utilisé.");
+        }
+
+        // Hash password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insert new user
+        $stmt = $this->pdo->prepare(
+            "INSERT INTO users (firstname, lastname, email, password) 
+            VALUES (:firstname, :lastname, :email, :password)"
+        );
+
+        return $stmt->execute([
+            ':firstname' => $firstname,
+            ':lastname' => $lastname,
+            ':email' => $email,
+            ':password' => $hashedPassword
+        ]);
+    }
+
+    // User login
+    public function login($email, $password) {
+        // Find user by email
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch();
+
+        // Verify password
+        if (!$user || !password_verify($password, $user['password'])) {
+            throw new Exception("Email ou mot de passe incorrect.");
+        }
+
+        // Start session
+        session_start();
+        $_SESSION['user'] = [
+            'id' => $user['id'],
+            'firstname' => $user['firstname'],
+            'lastname' => $user['lastname'],
+            'email' => $user['email'],
+            'role' => $user['role']
+        ];
+
+        return $user;
+    }
+
+    // Logout
+    public function logout() {
+        session_start();
+        session_destroy();
+        // Redirect to login page or home page
+    }
+
+    // Check if user is logged in
+    public function isLoggedIn() {
+        session_start();
+        return isset($_SESSION['user']);
+    }
+
+    // Get current logged-in user
+    public function getCurrentUser() {
+        session_start();
+        return $_SESSION['user'] ?? null;
+    }
+}

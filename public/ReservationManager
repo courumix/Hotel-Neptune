@@ -1,0 +1,104 @@
+<?php
+class ReservationManager {
+    private $pdo;
+    private $roomManager;
+
+    public function __construct(PDO $pdo, RoomManager $roomManager) {
+        $this->pdo = $pdo;
+        $this->roomManager = $roomManager;
+    }
+
+    // Create a new reservation
+    public function createReservation($userId, $roomId, $checkIn, $checkOut) {
+        // Validate room availability
+        $availableRooms = $this->roomManager->getAvailableRooms([
+            'room_id' => $roomId
+        ]);
+
+        if (empty($availableRooms)) {
+            throw new Exception("La chambre n'est pas disponible.");
+        }
+
+        // Calculate total price
+        $room = $availableRooms[0];
+        $nights = (strtotime($checkOut) - strtotime($checkIn)) / (60 * 60 * 24);
+        $totalPrice = $room['price_per_night'] * $nights;
+
+        // Create reservation
+        $stmt = $this->pdo->prepare(
+            "INSERT INTO reservations (user_id, room_id, check_in_date, check_out_date, total_price) 
+            VALUES (:user_id, :room_id, :check_in, :check_out, :total_price)"
+        );
+
+        $result = $stmt->execute([
+            ':user_id' => $userId,
+            ':room_id' => $roomId,
+            ':check_in' => $checkIn,
+            ':check_out' => $checkOut,
+            ':total_price' => $totalPrice
+        ]);
+
+        // Update room status
+        if ($result) {
+            $this->roomManager->updateRoomStatus($roomId, 'reservee');
+        }
+
+        return $result;
+    }
+
+    // Get user's reservations
+    public function getUserReservations($userId) {
+        $stmt = $this->pdo->prepare(
+            "SELECT r.*, rooms.room_number, rooms.type 
+            FROM reservations r 
+            JOIN rooms ON r.room_id = rooms.id 
+            WHERE r.user_id = :user_id 
+            ORDER BY r.check_in_date DESC"
+        );
+
+        $stmt->execute([':user_id' => $userId]);
+        return $stmt->fetchAll();
+    }
+
+    // Cancel reservation
+    public function cancelReservation($reservationId, $userId) {
+        // Begin transaction
+        $this->pdo->beginTransaction();
+
+        try {
+            // Get reservation details
+            $stmt = $this->pdo->prepare(
+                "SELECT room_id FROM reservations 
+                WHERE id = :reservation_id AND user_id = :user_id"
+            );
+            $stmt->execute([
+                ':reservation_id' => $reservationId,
+                ':user_id' => $userId
+            ]);
+            $reservation = $stmt->fetch();
+
+            if (!$reservation) {
+                throw new Exception("Réservation non trouvée.");
+            }
+
+            // Update reservation status
+            $stmt = $this->pdo->prepare(
+                "UPDATE reservations 
+                SET status = 'cancelled' 
+                WHERE id = :reservation_id"
+            );
+            $stmt->execute([':reservation_id' => $reservationId]);
+
+            // Update room status back to available
+            $this->roomManager->updateRoomStatus($reservation['room_id'], 'disponible');
+
+            // Commit transaction
+            $this->pdo->commit();
+            return true;
+        } catch (Exception $e) {
+            // Rollback transaction on error
+            $this->pdo->rollBack();
+            throw $e;
+        }
+    }
+}
