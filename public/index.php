@@ -61,7 +61,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <h1 class="mb-4">Bienvenue à l'Hôtel Neptune, <?php echo htmlspecialchars($username); ?> !</h1>
+                    <h1 class="mb-4">Bienvenue à l'Hôtel Neptune</h1>
                     <p class="lead">
                         Découvrez un havre de paix où le confort, l'élégance et l'hospitalité se rejoignent. 
                         Chaque détail a été pensé pour rendre votre séjour inoubliable.
