@@ -20,7 +20,7 @@ require_once __DIR__ . '/session.php';
         </li>
         <?php }} ?>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="listechambre.php">Liste des chambres</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
