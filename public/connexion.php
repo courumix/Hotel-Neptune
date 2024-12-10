@@ -50,17 +50,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Connexion</title>
 </head>
 <body>
-    <form method="POST" action="">
-        Mail : <input type="email" name="mail" placeholder="Adresse mail" required>
-        <br>
-        Password : <input type="password" name="password" placeholder="Mot de passe" required>
-        <br>
-        <input type="submit" value="Se connecter">
-        </div>
+<a href="index.php" class="btn btn-primary m-2"><h4>Retour à l'accueil</h4></a>
+<div class="container">
+    <form class="w-75 mx-auto" method="POST" action="">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Mail : </label>
+        <input type="email" name="mail" placeholder="Adresse mail" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Mot de passe : </label>
+        <input type="password" name="password" placeholder="Mot de passe" required class="form-control" id="exampleInputPassword1">
+      </div>
+      <input type="submit" value="Se connecter" class="btn btn-primary">
     </form>
-<a href="index.php"><h1>Retour à l'accueil</h1></a>
+</div>
 </body>
 </html>

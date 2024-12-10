@@ -56,21 +56,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Inscription</title>
 </head>
 <body>
-<form method="POST" action="">
-        Entrez votre Mail : <input type="email" name="newmail" placeholder="Adresse mail" required>
-        <br>
-        Entrez votre Mot de passe : <input type="password" name="newpassword" placeholder="Mot de passe" required>
-        <br>
-        Entrez votre Prénom : <input type="text" name="newfirstname" placeholder="Prénom" required>
-        <br>
-        Entrez votre Nom : <input type="text" name="newlastname" placeholder="Nom" required>
-        <br>
-        <input type="submit" value="envoyer">
-        </div>
+<a class="btn btn-primary m-2" href="index.php"><h4>Retour à l'accueil</h4></a>
+
+<div class="container">
+    <form class="w-75 mx-auto" method="POST" action="">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Entrez votre Mail : </label>
+        <input type="email" name="newmail" placeholder="Adresse mail" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Entrez votre Mot de passe : </label>
+        <input type="password" name="newpassword" placeholder="Mot de passe" required class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Entrez votre Prénom : </label>
+        <input type="password" name="newfirstname" placeholder="Prénom" required class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Entrez votre Nom : </label>
+        <input type="password" name="newlastname" placeholder="Nom" required class="form-control" id="exampleInputPassword1">
+      </div>
+      <input type="submit" value="S'inscrire" class="btn btn-primary">
     </form>
-<a href="index.php"><h1>Retour à l'accueil</h1></a>
+</div>
 </body>
 </html>
