@@ -1,3 +1,9 @@
+<?php
+
+require_once __DIR__ . '/../database.php';
+require_once __DIR__ . '/session.php';
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
