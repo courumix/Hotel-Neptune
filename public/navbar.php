@@ -4,10 +4,11 @@ require_once __DIR__ . '/session.php';
 
 ?>
 
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">
-      <img src="/public/Photo/Hôtel-Neptune-logo.jpg" alt="Logo Hôtel Neptune" class="logo me-3 rounded" style="height: 50px;">  
+    <a class="navbar-brand d-flex align-items-center" href="index.php">
+      <img src="/Photo/Hotel-Neptune-logo.jpg" alt="Logo Hôtel Neptune" class="logo me-3 rounded" style="height: 50px;">  
       <h1>Hôtel Neptune</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

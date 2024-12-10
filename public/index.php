@@ -13,7 +13,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     <title>Hôtel Neptune - Votre Séjour de Rêve</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="/public/Photo/Hôtel-Neptune-logo.jpg">
+    <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
     <style>
         .carousel-caption {
             background-color: rgba(0,0,0,0.5);
