@@ -74,11 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Entrez votre Prénom : </label>
-        <input type="password" name="newfirstname" placeholder="Prénom" required class="form-control" id="exampleInputPassword1">
+        <input type="text" name="newfirstname" placeholder="Prénom" required class="form-control" id="exampleInputPassword1">
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Entrez votre Nom : </label>
-        <input type="password" name="newlastname" placeholder="Nom" required class="form-control" id="exampleInputPassword1">
+        <input type="text" name="newlastname" placeholder="Nom" required class="form-control" id="exampleInputPassword1">
       </div>
       <input type="submit" value="S'inscrire" class="btn btn-primary">
     </form>

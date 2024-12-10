@@ -17,5 +17,3 @@ require_once __DIR__ . '/session.php';
 <body>
     <?php include __DIR__ . '/navbar.php'; ?>
     <h1>Hello <?php echo 'World'; ?></h1>
-    <a href="connexion.php"><h1>connexion</h1></a>
-    <a href="inscription.php"><h1>inscription</h1></a>
