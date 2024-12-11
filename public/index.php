@@ -23,7 +23,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 </head>
 <body>
     <?php include __DIR__ . '/navbar.php'; ?>
-<<<<<<< Updated upstream
+
 
     <div class="container-fluid p-0">
         <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -110,25 +110,3 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-=======
-    <div class="titre">
-     <h1>HELLO WORLD</h1>
-     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
-<style>
- *{
-    background-image: url(https://hapi.mmcreation.com/hapidam/4441d8ee-41d6-4bb8-93ac-a5834b6bd111/Facade_2_by_Night_-_CHotel_Raphael_Paris.jpg.jpg?size=lg);
- }
-
- .titre{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-}
-</style>
->>>>>>> Stashed changes
