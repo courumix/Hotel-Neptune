@@ -77,7 +77,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                         <div class="card-body">
                             <h5 class="card-title">Nos Chambres</h5>
                             <p class="card-text">Des chambres spacieuses et modernes, adaptées à tous vos besoins.</p>
-                            <a href="ajoutchambre.php" class="btn btn-primary">Voir les chambres</a>
+                            <a href="Noschambre.php" class="btn btn-primary">Voir les chambres</a>
                         </div>
                     </div>
                 </div>
