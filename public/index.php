@@ -77,7 +77,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                         <div class="card-body">
                             <h5 class="card-title">Nos Chambres</h5>
                             <p class="card-text">Des chambres spacieuses et modernes, adaptées à tous vos besoins.</p>
-                            <a href="chambredisponible.php" class="btn btn-primary">Voir les chambres</a>
+                            <a href="reservation.php" class="btn btn-primary">Voir les chambres</a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                         <div class="card-body">
                             <h5 class="card-title">Réservation</h5>
                             <p class="card-text">Réservez votre séjour en quelques clics et bénéficiez de nos meilleurs tarifs.</p>
-                            <a href="reservation.php" class="btn btn-success">Réserver maintenant</a>
+                            <a href="chambredisponible.php" class="btn btn-success">Réserver maintenant</a>
                         </div>
                     </div>
                 </div>
