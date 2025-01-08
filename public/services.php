@@ -4,6 +4,7 @@ require_once __DIR__ . '/session.php';
 
 // Fetch hotel details or user session information if needed
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,6 +24,32 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 </head>
 <body>
     <?php include __DIR__ . '/navbar.php'; ?>
+
+    <div className="container py-8">
+      <h1 className="text-4xl font-bold text-center mb-8">Nos Services</h1>
+      <div className="row">
+          <ServiceCard key={index} {...service} />
+      </div>
+      
+      <div className="mt-8 p-4 bg-gray-100 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Horaires des Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="p-4">
+            <h3 className="font-semibold mb-2">Restaurant</h3>
+            <p>Petit-déjeuner: 6h30 - 10h30</p>
+            <p>Déjeuner: 12h00 - 14h30</p>
+            <p>Dîner: 19h00 - 22h30</p>
+          </div>
+          <div className="p-4">
+            <h3 className="font-semibold mb-2">Bien-être</h3>
+            <p>Salle de sport: 24h/24</p>
+            <p>Piscine: 7h00 - 22h00</p>
+            <p>Spa: Sur rendez-vous</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 </body>
 <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Hôtel Neptune. Tous droits réservés.</p>
