@@ -11,7 +11,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hôtel Neptune - Votre Séjour de Rêve</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
     <style>
@@ -43,5 +43,13 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
+   
 </html>
+
+
+    
+    
+
+
+
