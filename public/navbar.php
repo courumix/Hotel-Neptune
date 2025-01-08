@@ -45,7 +45,7 @@ require_once __DIR__ . '/session.php';
       <?php } else { ?>
       <div>
         <h3><span class="badge text-bg-primary">
-        <?php echo $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname']; ?>
+        <?php echo $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['firstname']; ?>
       </span></h3>
       <a href="déconnexion.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
       </div>
