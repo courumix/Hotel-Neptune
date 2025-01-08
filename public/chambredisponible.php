@@ -26,7 +26,7 @@ require_once __DIR__ . '/session.php';
                     <div class="card-body">
                         <h5 class="card-title">Chambre Premium</h5>
                         <p class="card-text">Luxe et confort dans un espace élégant. Équipements haut de gamme pour un séjour inoubliable.</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>
                     </div>
                 </div>
             </div>
@@ -37,8 +37,7 @@ require_once __DIR__ . '/session.php';
                     <div class="card-body">
                         <h5 class="card-title">Chambre Standard</h5>
                         <p class="card-text">Simplicité et fonctionnalité. Parfaite pour un voyage d'affaires ou un court séjour.</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -48,8 +47,7 @@ require_once __DIR__ . '/session.php';
                     <div class="card-body">
                         <h5 class="card-title">Chambre Design</h5>
                         <p class="card-text">Espace moderne avec aménagement contemporain. Idéal pour les amateurs de style et de sophistication.</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -59,8 +57,7 @@ require_once __DIR__ . '/session.php';
                     <div class="card-body">
                         <h5 class="card-title">Chambre Supérieure</h5>
                         <p class="card-text">Un espace plus grand avec des détails raffinés. Confort supérieur et prestations de qualité.</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -70,8 +67,7 @@ require_once __DIR__ . '/session.php';
                     <div class="card-body">
                         <h5 class="card-title">Chambre Familiale</h5>
                         <p class="card-text">Spacieuse et confortable. 2 lits doubles et 2 lits superposés avec vue panoramique sur la rue de Boigne et le château des Ducs de Savoie.</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -85,8 +81,7 @@ require_once __DIR__ . '/session.php';
                         <br>• 4 personnes : dès 110€
                         <br>• 5 personnes : dès 120€
                         <br>Petit-déjeuner inclus (9.80€/personne)</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -101,8 +96,7 @@ require_once __DIR__ . '/session.php';
                         <br>• Climatisation
                         <br>• Wifi gratuit
                         <br>• Animaux acceptés (+15€/jour)</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
             
@@ -117,8 +111,7 @@ require_once __DIR__ . '/session.php';
                         <br>• Lit superposé
                         <br>• Balcon avec vue sur rue
                         <br>• WiFi et TV inclus</p>
-                        <a class="btn btn-primary" href="#" role="button">Reservée</a>
-                    </div>
+                        <a class="btn btn-primary" href="ajoutchambre.php" role="button">Reservée</a>                    </div>
                 </div>
             </div>
         </div>

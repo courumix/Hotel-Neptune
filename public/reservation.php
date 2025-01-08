@@ -23,9 +23,52 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 </head>
 <body>
     <?php include __DIR__ . '/navbar.php'; ?>
-    
+
+    <Card className="max-w-2xl mx-auto my-8">
+      <CardHeader>
+        <CardTitle className="text-2xl font-bold text-center">Réservation de Chambre</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="mb-4">
+            <label className="block text-sm font-medium mb-2">Type de Chambre</label>
+            <select name="chambre">
+              <option value="">Sélectionnez une chambre</option>
+              <option value="premium">Chambre Premium</option>
+              <option value="standard">Chambre Standard</option>
+              <option value="design">Chambre Design</option>
+              <option value="superieure">Chambre Supérieure</option>
+              <option value="familiale">Chambre Familiale</option>
+            </select>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">Date d'arrivée</label>
+              <input type="date"className="w-full p-2 border rounded">
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Date de départ</label>
+              <input type="date"className="w-full p-2 border rounded">
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">Nombre de personnes</label>
+            <input type="number"min="1"max="6"className="w-full p-2 border rounded"/>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">Demandes spéciales</label>
+            <textarea className="w-full p-2 border rounded"rows="4"></textarea>
+          </div>
+          <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+            Réserver
+          </button>
+        </form>
+      </CardContent>
+    </Card>
 
 </body>
+
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Hôtel Neptune. Tous droits réservés.</p>
         
