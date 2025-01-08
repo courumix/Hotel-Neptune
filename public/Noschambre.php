@@ -70,6 +70,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     </style>
 </head>
 <body>
+  <?php include __DIR__ . '/navbar.php'; ?>
     <!-- Chambres Section -->
     <div class="container py-5">
         <h2 class="text-center mb-5">Nos Chambres</h2>
