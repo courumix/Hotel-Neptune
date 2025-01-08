@@ -77,7 +77,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
             <!-- Chambre Premium -->
             <div class="col-md-6 col-lg-4">
                 <div class="card room-card shadow-sm">
-                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Premium">
+                    <img src="https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/181/2023/07/06125703/Premium-Room-1170x780.jpg" class="card-img-top room-image" alt="Chambre Premium">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h3 class="h5">Chambre Premium</h3>
@@ -105,7 +105,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
             <!-- Chambre Standard -->
             <div class="col-md-6 col-lg-4">
                 <div class="card room-card shadow-sm">
-                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Standard">
+                    <img src="https://static-otelico.com/cache/baulieu/cf1600/h800/vs30052020361-WEB.jpg" class="card-img-top room-image" alt="Chambre Standard">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h3 class="h5">Chambre Standard</h3>
@@ -133,7 +133,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
             <!-- Chambre Familiale -->
             <div class="col-md-6 col-lg-4">
                 <div class="card room-card shadow-sm">
-                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Familiale">
+                    <img src="https://www.maison-obono.com/wp-content/uploads/chambre-familiale-manoir.jpg" class="card-img-top room-image" alt="Chambre Familiale">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h3 class="h5">Chambre Familiale</h3>
