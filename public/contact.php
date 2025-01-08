@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . '/../database.php';
+require_once __DIR__ . '/session.php';
+
+// Fetch hotel details or user session information if needed
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

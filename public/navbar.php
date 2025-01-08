@@ -28,11 +28,11 @@ require_once __DIR__ . '/session.php';
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            info
+            Info
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="contact.php">Contact</a></li>
-            <li><a class="dropdown-item" href="services.php">Nos service</a></li>
+            <li><a class="dropdown-item" href="services.php">Nos services</a></li>
           </ul>
         </li>
         <li class="nav-item">
