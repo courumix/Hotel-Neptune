@@ -6,50 +6,162 @@ require_once __DIR__ . '/session.php';
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Neptune - Votre Séjour de Rêve</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hôtel Neptune - nos services </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
     <style>
-        .carousel-caption {
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 10px;
+        .room-card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+        }
+        .amenity-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .price-badge {
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .room-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card {
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
-    <?php include __DIR__ . '/navbar.php'; ?>
+<?php include __DIR__ . '/navbar.php'; ?>
 
-    <div className="container py-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Nos Services</h1>
-      <div className="row">
-          <ServiceCard key={index} {...service} />
-      </div>
-      
-      <div className="mt-8 p-4 bg-gray-100 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Horaires des Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4">
-            <h3 className="font-semibold mb-2">Restaurant</h3>
-            <p>Petit-déjeuner: 6h30 - 10h30</p>
-            <p>Déjeuner: 12h00 - 14h30</p>
-            <p>Dîner: 19h00 - 22h30</p>
-          </div>
-          <div className="p-4">
-            <h3 className="font-semibold mb-2">Bien-être</h3>
-            <p>Salle de sport: 24h/24</p>
-            <p>Piscine: 7h00 - 22h00</p>
-            <p>Spa: Sur rendez-vous</p>
-          </div>
+   <!-- Services Section -->
+   <div class="container py-5">
+        <h2 class="text-center mb-5">Nos Services</h2>
+        <div class="row g-4">
+            <!-- Restaurant -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="service-icon mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        </div>
+                        <h3 class="h5 mb-3">Restaurant Gastronomique</h3>
+                        <p class="card-text">Découvrez une cuisine raffinée mettant en valeur les produits locaux et de saison, dans un cadre élégant avec vue sur mer.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                Petit-déjeuner: 6h30 - 10h30<br>
+                                Déjeuner: 12h00 - 14h30<br>
+                                Dîner: 19h00 - 22h30
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spa -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="service-icon mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6"></path><path d="M12 20v-4"></path><path d="M3 6h18v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z"></path></svg>
+                        </div>
+                        <h3 class="h5 mb-3">Spa & Bien-être</h3>
+                        <p class="card-text">Profitez de nos installations spa complètes incluant piscine chauffée, sauna, hammam et massages sur rendez-vous.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                Piscine: 7h00 - 22h00<br>
+                                Spa: Sur rendez-vous<br>
+                                Salle de sport: 24h/24
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Service -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="service-icon mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="h5 mb-3">Service en Chambre 24/7</h3>
+                        <p class="card-text">Notre équipe est à votre disposition 24h/24 pour répondre à tous vos besoins pendant votre séjour.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                Service en chambre: 24h/24<br>
+                                Conciergerie: 24h/24<br>
+                                Assistance bagages: 24h/24
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+                <!-- Additional Services Information -->
+                <div class="mt-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="h4 text-center mb-4">Services Complémentaires</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h4 class="h6 mb-3">Services Gratuits</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ WiFi haut débit dans tout l'hôtel</li>
+                                <li class="mb-2">✓ Accès à la salle de fitness</li>
+                                <li class="mb-2">✓ Service de conciergerie</li>
+                                <li class="mb-2">✓ Bagagerie sécurisée</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="h6 mb-3">Services Premium</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">➤ Service de blanchisserie</li>
+                                <li class="mb-2">➤ Location de voiture de luxe</li>
+                                <li class="mb-2">➤ Guide touristique privé</li>
+                                <li class="mb-2">➤ Baby-sitting sur demande</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
+        <!-- Contact Section -->
+        <div class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h3 class="h4 mb-4">Besoin d'informations supplémentaires ?</h3>
+                <p class="mb-4">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+                <a href="contact.php"><button class="btn btn-primary me-2">Contactez-nous</button></a>
+                <a href="ajoutchambre.php"><button  class="btn btn-outline-primary">Réserver maintenant</button></a>
+            </div>
+        </div>
+    </div>
 </body>
 <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Hôtel Neptune. Tous droits réservés.</p>

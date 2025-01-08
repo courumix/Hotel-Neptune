@@ -22,51 +22,163 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     </style>
 </head>
 <body>
-    <?php include __DIR__ . '/navbar.php'; ?>
-
-    <Card className="max-w-2xl mx-auto my-8">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Réservation de Chambre</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Type de Chambre</label>
-            <select name="chambre">
-              <option value="">Sélectionnez une chambre</option>
-              <option value="premium">Chambre Premium</option>
-              <option value="standard">Chambre Standard</option>
-              <option value="design">Chambre Design</option>
-              <option value="superieure">Chambre Supérieure</option>
-              <option value="familiale">Chambre Familiale</option>
-            </select>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">Date d'arrivée</label>
-              <input type="date"className="w-full p-2 border rounded">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hôtel Neptune - Chambres </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .room-card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+        }
+        .amenity-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .price-badge {
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .room-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card {
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Chambres Section -->
+    <div class="container py-5">
+        <h2 class="text-center mb-5">Nos Chambres</h2>
+        <div class="row g-4">
+            <!-- Chambre Premium -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card room-card shadow-sm">
+                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Premium">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h5">Chambre Premium</h3>
+                            <span class="price-badge">250€ / nuit</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="text-muted">Jusqu'à 2 personnes</span>
+                        </div>
+                        <p class="card-text">Une chambre luxueuse avec vue panoramique sur la mer, parfaite pour un séjour romantique.</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
+                                WiFi
+                            </small>
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6"></path><path d="M12 20v-4"></path><path d="M3 6h18v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z"></path></svg>
+                                Spa privé
+                            </small>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Date de départ</label>
-              <input type="date"className="w-full p-2 border rounded">
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">Nombre de personnes</label>
-            <input type="number"min="1"max="6"className="w-full p-2 border rounded"/>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">Demandes spéciales</label>
-            <textarea className="w-full p-2 border rounded"rows="4"></textarea>
-          </div>
-          <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-            Réserver
-          </button>
-        </form>
-      </CardContent>
-    </Card>
 
+            <!-- Chambre Standard -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card room-card shadow-sm">
+                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Standard">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h5">Chambre Standard</h3>
+                            <span class="price-badge">150€ / nuit</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="text-muted">Jusqu'à 2 personnes</span>
+                        </div>
+                        <p class="card-text">Chambre confortable et fonctionnelle, idéale pour les voyageurs d'affaires.</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
+                                WiFi
+                            </small>
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                TV HD
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chambre Familiale -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card room-card shadow-sm">
+                    <img src="/api/placeholder/400/250" class="card-img-top room-image" alt="Chambre Familiale">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h5">Chambre Familiale</h3>
+                            <span class="price-badge">300€ / nuit</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="text-muted">Jusqu'à 4 personnes</span>
+                        </div>
+                        <p class="card-text">Spacieuse chambre avec deux espaces séparés, parfaite pour les familles.</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
+                                WiFi
+                            </small>
+                            <small class="text-muted d-flex align-items-center">
+                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6"></path><path d="M12 20v-4"></path><path d="M3 6h18v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z"></path></svg>
+                                2 Salles de bain
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
+    <!-- Contact Section -->
+    <div class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h3 class="h4 mb-4">Besoin d'informations supplémentaires ?</h3>
+                <p class="mb-4">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+                <a href="contact.php"><button class="btn btn-primary me-2">Contactez-nous</button></a>
+                <a href="ajoutchambre.php"><button  class="btn btn-outline-primary">Réserver maintenant</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </body>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
