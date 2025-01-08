@@ -158,7 +158,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                 <h3 class="h4 mb-4">Besoin d'informations supplémentaires ?</h3>
                 <p class="mb-4">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
                 <a href="contact.php"><button class="btn btn-primary me-2">Contactez-nous</button></a>
-                <a href="ajoutchambre.php"><button  class="btn btn-outline-primary">Réserver maintenant</button></a>
+                <a href="reservation.php"><button  class="btn btn-outline-primary">Réserver maintenant</button></a>
             </div>
         </div>
     </div>

@@ -111,10 +111,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="exampleInputPassword1" class="form-label">Entrez le prix de la chambre : </label>
         <input type="text" name="prix" placeholder="Prix" required class="form-control" id="exampleInputPassword1">
       </div>
-      <div class="mb-3">
-        <label  for="exampleInputPassword1" class="form-label">date de réservation : </label>
-        <input type="date" name="date" placeholder="date" required class="form-control" id="exampleInputPassword1">
-      </div>
       <input type="submit" value="Ajouter une chambre" class="btn btn-primary">
     </form>
 </div>
