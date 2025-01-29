@@ -1,9 +1,9 @@
 <?php
 
-$user = "app";
-$password = "app_password";
+$user = "User";
+$password = "Password_user";
 $host = "database";
-$dbname = "app";
+$dbname = "test";
 $dsn  = "mysql:dbname=$dbname;host=$host";
 
 try{

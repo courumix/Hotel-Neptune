@@ -11,7 +11,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Neptune - Votre Séjour de Rêve</title>
+    <title>UrbanTech - Connected Devices for comfort</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
@@ -27,7 +27,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Hôtel Neptune - Chambres </title>
+    <title>UrbanTech - Connected Devices for comfort</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .room-card {
@@ -73,7 +73,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <body>
 <?php include __DIR__ . '/navbar.php'; ?>
     <div class="container mt-5">
-        <h1 class="text-center">Réservez votre chambre</h1>
+        <h1 class="text-center">Make your reservation</h1>
         
         <!-- Affichage des messages -->
         <?php if (!empty($message)) echo $message; ?>
@@ -81,36 +81,24 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
         <!-- Formulaire de réservation -->
         <form action="" method="POST" class="mt-4">
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom complet :</label>
+                <label for="nom" class="form-label">First and Last name :</label>
                 <input type="text" class="form-control" id="nom" name="nom" required>
             </div>
             
             <div class="mb-3">
-                <label for="email" class="form-label">Adresse email :</label>
+                <label for="email" class="form-label">email Address :</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             
             <div class="mb-3">
-                <label for="type_chambre" class="form-label">Type de chambre :</label>
+                <label for="type_chambre" class="form-label">Product :</label>
                 <select class="form-select" id="type_chambre" name="type_chambre" required>
-                    <option value="1">Familiale</option>
-                    <option value="2">Premium</option>
-                    <option value="3">Simple</option>
-                    <option value="Suite">Suite</option>
+                    <option value="1">SmartWatch Ultra</option>
+                    <option value="2">SmartWatch SE</option>
+                    <option value="3">Apple Watch</option>
                 </select>
             </div>
-            
-            <div class="mb-3">
-                <label for="date_arrivee" class="form-label">Date d'arrivée :</label>
-                <input type="date" class="form-control" id="date_arrivee" name="date_arrivee" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="date_depart" class="form-label">Date de départ :</label>
-                <input type="date" class="form-control" id="date_depart" name="date_depart" required>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Réserver</button>
+            <button type="submit" class="btn btn-primary">Re    serve</button>
         </form>
     </div>
 

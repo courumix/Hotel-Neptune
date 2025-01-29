@@ -10,7 +10,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Neptune - Votre Séjour de Rêve</title>
+    <title>UrbanTech - Connected Devices for comfort</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
@@ -26,7 +26,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Hôtel Neptune - Chambres </title>
+    <title>UrbanTech - Services </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .room-card {
@@ -73,31 +73,22 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
   <?php include __DIR__ . '/navbar.php'; ?>
     <!-- Chambres Section -->
     <div class="container py-5">
-        <h2 class="text-center mb-5">Nos Chambres</h2>
+        <h2 class="text-center mb-5">Services</h2>
         <div class="row g-4">
-            <!-- Chambre Premium -->
+            <!-- Eco-Friendly -->
             <div class="col-md-6 col-lg-4">
                 <div class="card room-card shadow-sm">
                     <img src="https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/181/2023/07/06125703/Premium-Room-1170x780.jpg" class="card-img-top room-image" alt="Chambre Premium">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h5">Chambre Premium</h3>
-                            <span class="price-badge">250€ / nuit</span>
+                            <h3 class="h5">Eco-Friendly</h3>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            <span class="text-muted">Jusqu'à 2 personnes</span>
+                            <span class="text-muted">For All Clients</span>
                         </div>
-                        <p class="card-text">Une chambre luxueuse avec vue panoramique sur la mer, parfaite pour un séjour romantique.</p>
+                        <p class="card-text">All Our Deliveries are in a Eco-friendly way.</p>
                         <div class="d-flex gap-3 mt-3">
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
-                                WiFi
-                            </small>
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6"></path><path d="M12 20v-4"></path><path d="M3 6h18v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z"></path></svg>
-                                Spa privé
-                            </small>
                         </div>
                     </div>
                 </div>
@@ -109,23 +100,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                     <img src="https://static-otelico.com/cache/baulieu/cf1600/h800/vs30052020361-WEB.jpg" class="card-img-top room-image" alt="Chambre Standard">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h5">Chambre Standard</h3>
-                            <span class="price-badge">150€ / nuit</span>
+                            <h3 class="h5">Quick delivery</h3>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            <span class="text-muted">Jusqu'à 2 personnes</span>
+                            <span class="text-muted">For Experts Clients</span>
                         </div>
-                        <p class="card-text">Chambre confortable et fonctionnelle, idéale pour les voyageurs d'affaires.</p>
+                        <p class="card-text">a Faster delivery is accesible to Clients who made more than 5 purchases.</p>
                         <div class="d-flex gap-3 mt-3">
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
-                                WiFi
-                            </small>
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                TV HD
-                            </small>
                         </div>
                     </div>
                 </div>
@@ -137,23 +119,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                     <img src="https://www.maison-obono.com/wp-content/uploads/chambre-familiale-manoir.jpg" class="card-img-top room-image" alt="Chambre Familiale">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h5">Chambre Familiale</h3>
-                            <span class="price-badge">300€ / nuit</span>
+                            <h3 class="h5">Nice Packaging</h3>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                             <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            <span class="text-muted">Jusqu'à 4 personnes</span>
+                            <span class="text-muted">For Everyone</span>
                         </div>
-                        <p class="card-text">Spacieuse chambre avec deux espaces séparés, parfaite pour les familles.</p>
+                        <p class="card-text">Special and Beautiful Packaging on your deliveries.</p>
                         <div class="d-flex gap-3 mt-3">
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
-                                WiFi
-                            </small>
-                            <small class="text-muted d-flex align-items-center">
-                                <svg class="amenity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6"></path><path d="M12 20v-4"></path><path d="M3 6h18v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z"></path></svg>
-                                2 Salles de bain
-                            </small>
                         </div>
                     </div>
                 </div>

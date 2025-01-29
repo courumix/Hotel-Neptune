@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $querry = $pdo->prepare('SELECT * FROM users WHERE users.email = :email');
-    $querry->execute(['email' => $_POST['mail']]);
+    $querry = $pdo->prepare('SELECT * FROM User WHERE email_user = :email');
+    $querry->execute(params: ['email' => $_POST['mail']]);
     $user = $querry->fetch();
 
     if(!$user) {

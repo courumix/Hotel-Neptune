@@ -10,14 +10,23 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Neptune - Votre Séjour de Rêve</title>
+    <title>UrbanTech - Comfort, fitness, and connection</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="/Photo/Hotel-Neptune-logo.jpg">
+    <link rel="icon" href="/Photo/public/Urban Tech Logo.png">
     <style>
         .carousel-caption {
             background-color: rgba(0,0,0,0.5);
             border-radius: 10px;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
         }
     </style>
 </head>
@@ -29,24 +38,24 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
         <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="https://www.yonder.fr/sites/default/files/styles/lg-insert/public/contenu/destinations/hotel%20richer%20de%20belleval%202%C2%A9%20jerome%20mondiere.jpg?itok=pIlrrovQ" class="d-block w-100" alt="Chambre Luxueuse">
+                    <img src="https://m.media-amazon.com/images/I/41F-cy37dtL.jpg" alt="SmartWatch SE">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Chambres Élégantes</h5>
-                        <p>Découvrez le confort et le raffinement de nos suites</p>
+                        <h5>SmartWatch SE</h5>
+                        <p>Professional-grade smartwatch for fitness, style, and more.</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://cdn.generationvoyage.fr/2021/08/hotel-montpellier7.jpeg" class="d-block w-100" alt="Espace Commun">
+                    <img src="https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-Trail-Loop-orange-beige-230912_inline.jpg.large.jpg" class="d-block w-100" alt="Smart Watch Ultra">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Espaces Communs Modernes</h5>
-                        <p>Des espaces conçus pour votre bien-être et votre détente</p>
+                        <h5>SmartWatch Ultra</h5>
+                        <p>Stay ultra-connected with cutting-edge features and design.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://hapi.mmcreation.com/hapidam/c683f04e-8125-46c1-9713-21045cdf175f/hotel-raphael-rooftop-022.jpg?size=lg" class="d-block w-100" alt="Terrasse Panoramique">
+                    <img src="https://m.media-amazon.com/images/I/61X6F+4adNL.jpg" class="d-block w-100" alt="Apple Watch">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Terrasse Panoramique</h5>
-                        <p>Profitez d'une vue imprenable sur la ville</p>
+                        <h5>Apple SmartWatch</h5>
+                        <p>Experience the next generation of smart technology on your wrist.</p>
                     </div>
                 </div>
             </div>
@@ -63,10 +72,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
         <div class="container my-5">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <h1 class="mb-4">Bienvenue à l'Hôtel Neptune</h1>
+                    <h1 class="mb-4">UrbanTech Connected Objetcs</h1>
                     <p class="lead">
-                        Découvrez un havre de paix où le confort, l'élégance et l'hospitalité se rejoignent. 
-                        Chaque détail a été pensé pour rendre votre séjour inoubliable.
+                        Discover all our latest connected objects designed to enhance your lifestyle with cutting-edge technology and seamless integration.
                     </p>
                 </div>
             </div>
@@ -75,9 +83,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Nos Chambres</h5>
-                            <p class="card-text">Des chambres spacieuses et modernes, adaptées à tous vos besoins.</p>
-                            <a href="Noschambre.php" class="btn btn-primary">Voir les chambres</a>
+                            <h5 class="card-title">Our Products</h5>
+                            <p class="card-text">Discover many types of SmartWatches, and Find out which is your favourtie based on your criterium.</p>
+                            <a href="chambredisponible.php" class="btn btn-primary">See Products</a>
                         </div>
                     </div>
                 </div>
@@ -85,17 +93,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Réservation</h5>
-                            <p class="card-text">Réservez votre séjour en quelques clics et bénéficiez de nos meilleurs tarifs.</p>
-                            <a href="chambredisponible.php" class="btn btn-success">Réserver maintenant</a>
+                            <p class="card-text">Want to buy a product? make a reservation and wait for us to deliver it to you!</p>
+                            <a href="reservation.php" class="btn btn-success">Make a Reservation</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Services</h5>
-                            <p class="card-text">Découvrez nos services haut de gamme pour un séjour parfait.</p>
-                            <a href="services.php" class="btn btn-info">Nos services</a>
+                            <h5 class="card-title">Contact</h5>
+                            <p class="card-text">Want some additional information? Our team is ready to fullfil your needs and anwer your questions!</p>
+                            <a href="contact.php" class="btn btn-info">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +112,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Visiteur';
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 Hôtel Neptune. Tous droits réservés.</p>
+        <p>&copy; 2025 UrbanTech. All Rights Reserved.</p>
         
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
             <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>

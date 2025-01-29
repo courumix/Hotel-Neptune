@@ -37,9 +37,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Configure Apache
 ADD docker/apache/entrypoint.sh /entrypoint.sh
-RUN chmod a+x /entrypoint.sh && \
+RUN sed -i 's/\r$//' /entrypoint.sh && \
+    chmod a+x /entrypoint.sh && \
     a2enmod rewrite remoteip ssl
-
+    
 CMD ["/entrypoint.sh"]
 
 EXPOSE 80

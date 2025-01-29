@@ -1,10 +1,10 @@
-name: Hotel-Neptune
+name: Test-Urban-Tech
 
 services:
   ###> doctrine/doctrine-bundle ###
   database:
     image: bitnami/mariadb:10.6.19
-    container_name: Neptune-database
+    container_name: Test-database
     environment:
       - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD:-root_password}
       - MARIADB_USER=${MARIADB_USER:-app}
@@ -21,9 +21,9 @@ services:
 
   phpmyadmin:
     image: phpmyadmin:5.2.1
-    container_name: Neptune-phpmyadmin
+    container_name: Test-phpmyadmin
     ports:
-      - 8080:80
+      - 8070:80
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=database
@@ -39,14 +39,14 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    container_name: Neptune-apache
+    container_name: Test-apache
     volumes:
       - .:/var/www/
       - ./docker/apache/apache.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./docker/apache/php.ini:/usr/local/etc/php/conf.d/php.custom.ini
       - ./docker/apache/.htaccess:/var/www/public/.htaccess
     ports:
-      - 8000:80
+      - 8020:80
     depends_on:
       - database
     networks:

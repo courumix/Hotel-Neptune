@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $query = $pdo->prepare('SELECT * FROM users WHERE users.email = :email');
+    $query = $pdo->prepare('SELECT * FROM User WHERE email_user = :email');
     $query->execute(['email' => $_POST['newmail']]);
 
     if ($query->fetch()) {
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
 
     $query = $pdo->prepare('
-        INSERT INTO users(firstname, lastname, email, password)
+        INSERT INTO User(firstname, lastname, email, password)
         VALUES(:firstname, :lastname, :mail, :password)
     ');
     $query->execute([

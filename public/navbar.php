@@ -8,8 +8,8 @@ require_once __DIR__ . '/session.php';
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="index.php">
-      <img src="/Photo/Hotel-Neptune-logo.jpg" alt="Logo Hôtel Neptune" class="logo me-3 rounded" style="height: 50px;">  
-      <h1>Hôtel Neptune</h1>
+      <img src="/Photo/Urban Tech Logo.png" alt="Logo Urban Tech" class="logo me-3 rounded" style="height: 80px;">  
+      <h1>Urban Tech</h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@ require_once __DIR__ . '/session.php';
         </li>
         <?php }} ?>
         <li class="nav-item">
-          <a class="nav-link" href="Noschambre.php">Liste des chambres</a>
+          <a class="nav-link" href="Noschambre.php">About Deliveries</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,7 +32,6 @@ require_once __DIR__ . '/session.php';
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="contact.php">Contact</a></li>
-            <li><a class="dropdown-item" href="services.php">Nos services</a></li>
           </ul>
         </li>
         <li class="nav-item">
